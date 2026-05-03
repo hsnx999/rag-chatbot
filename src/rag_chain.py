@@ -1,7 +1,7 @@
 from typing import Generator, List
 import chromadb
 from langchain.schema import Document
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from langchain.prompts import ChatPromptTemplate
 
 from src.vector_store import query_vector_store
@@ -58,7 +58,7 @@ def answer_question(
         question=question,
     )
 
-    # Step 4 — stream the response from Qwen
-    llm = ChatOllama(model="qwen2.5-coder:3b", temperature=0.0)
+    # Step 4 — stream the response from Groq
+    llm = ChatGroq(model="llama-3.1-8b-instant", temperature=0.0)
     for chunk in llm.stream(prompt):
         yield chunk.content

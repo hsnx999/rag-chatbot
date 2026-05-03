@@ -1,15 +1,15 @@
 import os
 from typing import List
 from langchain.schema import Document
-from langchain_ollama import OllamaEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 import chromadb
 
 CHROMA_PERSIST_DIR = "chroma_db"
 COLLECTION_NAME = "rag_documents"
 
 
-def get_embeddings() -> OllamaEmbeddings:
-    return OllamaEmbeddings(model="nomic-embed-text")
+def get_embeddings():
+    return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 
 def get_chroma_client():
