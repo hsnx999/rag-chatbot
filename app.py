@@ -10,7 +10,7 @@ from src.rag_chain import answer_question
 # ── Page config ────────────────────────────────────────────
 st.set_page_config(page_title="DocChat", page_icon="📄")
 st.title("📄 DocChat")
-st.caption("Upload a PDF and ask questions about it — powered by RAG + Qwen")
+st.caption("Upload a PDF and ask questions about it — powered by RAG + Llama")
 
 
 # ── Session state ──────────────────────────────────────────
