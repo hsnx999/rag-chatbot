@@ -68,7 +68,7 @@ else:
             placeholder = st.empty()
             full_response = ""
 
-            for token in answer_question(st.session_state.collection, question):
+            for token in answer_question(st.session_state.collection, question, st.session_state.messages):
                 full_response += token
                 placeholder.markdown(full_response + "▌")
 
